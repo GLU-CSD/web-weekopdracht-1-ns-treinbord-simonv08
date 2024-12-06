@@ -231,7 +231,7 @@ body.loaded #hand-sec {
   z-index: 2;
 }
 
-#next-train {
+#next-train-box {
   width: 480px;
   height: 40px;
   margin-left: 5.5px;
@@ -257,23 +257,53 @@ body.loaded #hand-sec {
 }
 
 #departure-time {
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: bolder;
+  color: rgb(0, 0, 106);
+  margin-top: -290px;
+  margin-left: 10px;
 }
 
 #final-destination {
-  font-size: 20px;
+  font-size: 40px;
+  color: rgb(0, 0, 106);
+  margin-left: 10px;
+  font-weight: 600;
 }
 
 #between-stops {
-  font-size: 20px;
+  font-size: 25px;
+  width: 380px;
+  color: rgb(0, 0, 106);
+  margin-top: 5px;
+  margin-left: 15px;
 }
 
 #train-type {
   font-size: 40px;
+  font-weight: bolder;
+  color: rgb(0, 0, 106);
+  margin-left: 250px;
+  margin-top: -150px;
+}
+
+#next-train-info {
+  font-size: 20px;
+  color: #fff;
+  margin-top: -30px;
+  margin-left: 10px;
 }
 
 #train-type-logo {
-  size: 60px;
+  display: block;
+  width: 100px;
+}
+
+img {
+  display: block;
+  width: 80px;
+  margin-left: 405px;
+  margin-top: -35px;
 }
 
 #train-image {
