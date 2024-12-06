@@ -243,9 +243,9 @@ body.loaded #hand-sec {
 #track-number {
   color: rgb(0, 0, 106);
   font-weight: bold;
-  font-size: 60px;
-  padding-left: 25px;
-  padding-top: 15px;
+  font-size: 80px;
+  padding-left: 40px;
+  padding-top: 0px;
 }
 
 #track-part {
@@ -283,7 +283,7 @@ body.loaded #hand-sec {
   font-size: 40px;
   font-weight: bolder;
   color: rgb(0, 0, 106);
-  margin-left: 250px;
+  margin-left: 230px;
   margin-top: -150px;
 }
 
@@ -308,4 +308,13 @@ img {
 
 #train-image {
   size: 100px;
+}
+
+#message {
+  font-size: 18px;
+  font-weight: bolder;
+  color: rgb(166, 0, 0);
+  margin-top: 190px;
+  margin-left: 10px;
+  width: 480px;
 }
