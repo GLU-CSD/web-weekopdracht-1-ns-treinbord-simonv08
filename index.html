@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weekopdracht - NS-Treinbord</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/script.js"></script>
+  </head>
+  <body>
     <div id="container">
-        <div id="left">
-            <!-- hier komt de klok -->
+      <div id="left">
+        <!-- hier komt de klok -->
+        <div id="border"></div>
+        <div id="clock">
+          <div id="hand-hour"></div>
+          <div id="hand-min"></div>
+          <div id="hand-sec">
+            <div class="line"></div>
+            <div class="circle"></div>
+            <div class="line"></div>
+          </div>
+          <div id="minutes"></div>
         </div>
-        <div id="middle">
-            <!-- Hier komt de reizigers info -->
+      </div>
+      <div id="middle">
+        <!-- Hier komt de reizigers info -->
+        <div id="main-box">
+          <div id="main-box-outline"></div>
+          <div id="main-box-seperation"></div>
+          <div id="info-box"></div>
+          <div id="next-train"></div>
+          <div id="departure-time"></div>
+          <div id="final-destination"></div>
+          <div id="between-stops"></div>
+          <div id="train-type"></div>
+          <div id="train-type-logo"></div>
+          <div id="train-image"></div>
         </div>
-        <div id="right">
-            <!-- hier komt het spoor nummer -->
+      </div>
+      <div id="right">
+        <!-- hier komt het spoor nummer -->
+        <div id="track-square-assets">
+          <div id="track-square"></div>
+          <div id="track-blue-corner"></div>
+          <div id="track-txt">spoor</div>
+          <div id="track-number">18</div>
+          <div id="track-part">b</div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

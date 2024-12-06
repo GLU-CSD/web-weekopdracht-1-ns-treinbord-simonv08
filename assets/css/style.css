@@ -1,30 +1,281 @@
-#container{
-    width: 936px;
-    display: flex;
-    margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
-    border: 2px solid #000;
+#container {
+  width: 936px;
+  display: flex;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #000;
 }
 
-#left{
-    width: 240px;
-    background-color: #f2f2f2;
-    height: 335px;
-    border: 2px solid #000;
+#left {
+  width: 240px;
+  background-color: #f2f2f2;
+  height: 335px;
+  border: 2px solid #000;
 }
 
 #middle {
-    width: 568px;
-    height: 339px;
-    background-color: rgb(0, 0, 106);
-    padding: 35px;
-    box-sizing: border-box;
-    border: 2px solid #000;
+  width: 568px;
+  height: 338px;
+  background-color: rgb(0, 0, 106);
+  padding: 35px;
+  box-sizing: border-box;
+  border: 2px solid #000;
 }
 
-#right{
-    width:128px;
-    height: 335px;
-    background-color: rgb(0, 0, 106);
-    border: 2px solid #000;
+#right {
+  width: 128px;
+  height: 335px;
+  background-color: rgb(0, 0, 106);
+  border: 2px solid #000;
+}
+
+#clock {
+  position: relative;
+  width: 195px;
+  height: 195px;
+  margin: 15px auto;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+body.loaded #clock {
+  opacity: 1;
+}
+
+#hand-hour,
+#hand-min,
+#hand-sec {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  margin-left: -3px;
+  width: 6px;
+}
+
+body.loaded #hand-hour,
+body.loaded #hand-min,
+body.loaded #hand-sec {
+  transition: transform 1s;
+}
+
+#hand-hour,
+#hand-min {
+  background: #1441ad;
+  border-radius: 0 0 3px 3px;
+}
+
+#hand-hour,
+#hand-min,
+#hand-sec .line,
+#hand-sec .circle {
+  box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+#hand-hour {
+  margin-top: -20px;
+  height: 75px;
+
+  transform-origin: 3px 20px;
+}
+
+#hand-min {
+  margin-top: -20px;
+  height: 110px;
+
+  transform-origin: 3px 20px;
+}
+
+#hand-sec {
+  margin-top: -22.5px;
+  height: 110px;
+
+  transform-origin: 3px 22.5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#hand-sec:before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 5px;
+  height: 5px;
+  background: #990000;
+  border-radius: 5px;
+}
+
+#hand-sec .line {
+  background: #990000;
+  width: 2px;
+  height: 47px;
+}
+
+#hand-sec .line:first-child {
+  height: 70px;
+}
+
+#hand-sec .line:last-child {
+  height: 25px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+#hand-sec .circle {
+  border: 2px solid #990000;
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+}
+
+#minutes {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+#minutes .minute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -3px;
+  width: 20px;
+  height: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#minutes .minute:before {
+  content: "";
+  display: block;
+  background: #1441ad;
+  width: 3px;
+  height: 3px;
+  border-radius: 5px;
+}
+
+#minutes .minute:nth-child(5n + 1):before {
+  width: 20px;
+  height: 8px;
+}
+
+#logo {
+  position: absolute;
+  top: 135px;
+  left: 50%;
+  margin-left: -25px;
+  width: 50px;
+  height: 25px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB4bWxuczpz...);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#track-square {
+  background: #fff;
+  width: 96px;
+  height: 96px;
+  margin-left: 16px;
+  margin-top: 40px;
+}
+
+#track-blue-corner {
+  background-color: rgb(0, 0, 106);
+  width: 21px;
+  height: 21px;
+  margin-top: -97px;
+  margin-left: 15px;
+}
+
+#track-txt {
+  color: rgb(0, 0, 106);
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 40px;
+  margin-top: -15px;
+}
+
+#main-box-outline {
+  background: #000;
+  width: 484px;
+  height: 304px;
+  margin-left: 3.5px;
+  margin-top: -20px;
+  z-index: 1;
+  background: linear-gradient(45deg, transparent 7px, rgb(0, 0, 0) 0);
+}
+
+#main-box-seperation {
+  background-color: #f0f;
+  width: 480;
+  height: 4;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  z-index: 2;
+}
+
+#info-box {
+  background: #fff;
+  width: 480px;
+  height: 260px;
+  margin-left: 6px;
+  margin-top: -302px;
+  z-index: 2;
+}
+
+#next-train {
+  width: 480px;
+  height: 40px;
+  margin-left: 5.5px;
+  margin-top: 0px;
+  z-index: 2;
+  background: linear-gradient(45deg, transparent 7px, rgb(0, 0, 56) 0);
+}
+
+#track-number {
+  color: rgb(0, 0, 106);
+  font-weight: bold;
+  font-size: 60px;
+  padding-left: 25px;
+  padding-top: 15px;
+}
+
+#track-part {
+  color: rgb(0, 0, 106);
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 90px;
+  margin-top: -65px;
+}
+
+#departure-time {
+  font-size: 20px;
+}
+
+#final-destination {
+  font-size: 20px;
+}
+
+#between-stops {
+  font-size: 20px;
+}
+
+#train-type {
+  font-size: 40px;
+}
+
+#train-type-logo {
+  size: 60px;
+}
+
+#train-image {
+  size: 100px;
 }
